@@ -27,6 +27,11 @@ public class PersonaController {
     @Autowired
     private IPersonaService interPersona;
     
+    @GetMapping
+    public String decirHola(){
+        return "Bienvenido Hola Mundo";
+    }
+    
     @GetMapping ("/personas/traer")
     public List<Persona> getPersonas(){
         return interPersona.getPersonas();
