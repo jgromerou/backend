@@ -56,7 +56,13 @@ public class PersonaController {
     
     @GetMapping ("personas/buscarid/{id}")
     public Persona getPersoById (@PathVariable Long id){
-    return interPersona.getPersoById(id);
+        return interPersona.getPersoById(id);
+    }
+    
+    
+    @GetMapping ("personas/buscarid")
+    public List<Persona> getPerso (){
+        return interPersona.getPer();
     }
     
     @GetMapping ("personas/buscar/{nombre}")

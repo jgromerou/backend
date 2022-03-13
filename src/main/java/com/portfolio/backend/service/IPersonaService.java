@@ -27,4 +27,6 @@ public interface IPersonaService {
     
     //método para buscar una persona por nombre
     public Persona getPersoByName(String nombre);
+
+    public List<Persona> getPer();
 }

@@ -48,5 +48,11 @@ public class PersonaService implements IPersonaService{
         return listaPerso;
     }
 
+    @Override
+    public List<Persona> getPer() {
+        List<Persona> listaPersona = persoRepository.getPerso();
+        return listaPersona;
+    }
+
    
 }
