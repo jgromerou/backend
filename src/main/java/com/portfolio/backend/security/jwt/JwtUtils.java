@@ -14,6 +14,7 @@ import org.springframework.web.util.WebUtils;
 
 import com.portfolio.backend.security.services.UserDetailsImpl;
 import io.jsonwebtoken.*;
+import org.springframework.security.core.Authentication;
 
 @Component
 public class JwtUtils {
@@ -37,10 +38,21 @@ public class JwtUtils {
     }
   }
 
-  public ResponseCookie generateJwtCookie(UserDetailsImpl userPrincipal) {
-    String jwt = generateTokenFromUsername(userPrincipal.getUsername());
-    ResponseCookie cookie = ResponseCookie.from(jwtCookie, jwt).path("/api").maxAge(24 * 60 * 60).httpOnly(true).build();
-    return cookie;
+ // public ResponseCookie generateJwtCookie(UserDetailsImpl userPrincipal) {
+ //   String jwt = generateTokenFromUsername(userPrincipal.getUsername());
+ //   ResponseCookie cookie = ResponseCookie.from(jwtCookie, jwt).path("/api").maxAge(24 * 60 * 60).httpOnly(true).build();
+ //   return cookie;
+ // }
+  public String generateJwtToken(Authentication authentication) {
+
+    UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
+
+    return Jwts.builder()
+        .setSubject((userPrincipal.getUsername()))
+        .setIssuedAt(new Date())
+        .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+        .signWith(SignatureAlgorithm.HS512, jwtSecret)
+        .compact();
   }
 
   public ResponseCookie getCleanJwtCookie() {

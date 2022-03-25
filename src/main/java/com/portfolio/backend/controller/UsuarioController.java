@@ -27,6 +27,7 @@ import com.portfolio.backend.model.Role;
 import com.portfolio.backend.model.User;
 import com.portfolio.backend.payload.request.LoginRequest;
 import com.portfolio.backend.payload.request.SignupRequest;
+import com.portfolio.backend.payload.response.JwtResponse;
 import com.portfolio.backend.payload.response.UserInfoResponse;
 import com.portfolio.backend.payload.response.MessageResponse;
 import com.portfolio.backend.repository.RoleRepository;
@@ -63,17 +64,18 @@ public class UsuarioController {
 
     UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
-    ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(userDetails);
+    //ResponseCookie jwt = jwtUtils.generateJwtCookie(userDetails);
+    String jwt = jwtUtils.generateJwtToken(authentication);
 
     List<String> roles = userDetails.getAuthorities().stream()
         .map(item -> item.getAuthority())
         .collect(Collectors.toList());
 
-    return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
-        .body(new UserInfoResponse(userDetails.getId(),
-                                   userDetails.getUsername(),
-                                   userDetails.getEmail(),
-                                   roles));
+    return ResponseEntity.ok(new JwtResponse(jwt, 
+                         userDetails.getId(), 
+                         userDetails.getUsername(), 
+                         userDetails.getEmail(), 
+                         roles));
   }
 
   @PostMapping("/signup")
