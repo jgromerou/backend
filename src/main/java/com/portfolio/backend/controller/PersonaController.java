@@ -66,7 +66,6 @@ public class PersonaController {
         return interPersona.getPersoById(id);
     }
     
-    
     @GetMapping ("personas/buscarid")
     public List<Persona> getPerso (){
         return interPersona.getPer();
