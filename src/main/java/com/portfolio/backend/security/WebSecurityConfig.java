@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.portfolio.backend.security.jwt.AuthEntryPointJwt;
 import com.portfolio.backend.security.jwt.AuthTokenFilter;
-import com.portfolio.backend.security.services.UserDetailsServiceImpl;
+import com.portfolio.backend.security.services.UsuarioDetallesServiceImpl;
 
 @Configuration
 @EnableWebSecurity
@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   private String h2ConsolePath;
   
   @Autowired
-  UserDetailsServiceImpl userDetailsService;
+  UsuarioDetallesServiceImpl userDetailsService;
 
   @Autowired
   private AuthEntryPointJwt unauthorizedHandler;

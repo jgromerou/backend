@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.portfolio.backend.model.ERole;
-import com.portfolio.backend.model.Role;
+import com.portfolio.backend.model.Rol;
 
 @Repository
-public interface RoleRepository extends JpaRepository<Role, Long> {
-  Optional<Role> findByName(ERole name);
+public interface RoleRepository extends JpaRepository<Rol, Long> {
+  Optional<Rol> findByRol(ERole rol);
 }
 

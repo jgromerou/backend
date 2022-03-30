@@ -9,13 +9,13 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.portfolio.backend.model.User;
+import com.portfolio.backend.model.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class UserDetailsImpl implements UserDetails {
+public class UsuarioDetallesImpl implements UserDetails {
   private static final long serialVersionUID = 1L;
 
-  private Long id;
+  private Long idUsuario;
 
   private String username;
 
@@ -26,25 +26,25 @@ public class UserDetailsImpl implements UserDetails {
 
   private Collection<? extends GrantedAuthority> authorities;
 
-  public UserDetailsImpl(Long id, String username, String email, String password,
+  public UsuarioDetallesImpl(Long idUsuario, String username, String email, String password,
       Collection<? extends GrantedAuthority> authorities) {
-    this.id = id;
+    this.idUsuario = idUsuario;
     this.username = username;
     this.email = email;
     this.password = password;
     this.authorities = authorities;
   }
 
-  public static UserDetailsImpl build(User user) {
-    List<GrantedAuthority> authorities = user.getRoles().stream()
-        .map(role -> new SimpleGrantedAuthority(role.getName().name()))
+  public static UsuarioDetallesImpl build(Usuario usuario) {
+    List<GrantedAuthority> authorities = usuario.getRoles().stream()
+        .map(rol -> new SimpleGrantedAuthority(rol.getRol().name()))
         .collect(Collectors.toList());
 
-    return new UserDetailsImpl(
-        user.getId(), 
-        user.getUsername(), 
-        user.getEmail(),
-        user.getPassword(), 
+    return new UsuarioDetallesImpl(
+        usuario.getIdUsuario(), 
+        usuario.getusername(), 
+        usuario.getEmail(),
+        usuario.getPassword(), 
         authorities);
   }
 
@@ -53,24 +53,26 @@ public class UserDetailsImpl implements UserDetails {
     return authorities;
   }
 
-  public Long getId() {
-    return id;
+  public Long getIdUsuario() {
+    return idUsuario;
   }
 
   public String getEmail() {
     return email;
   }
+  
+   @Override
+    public String getUsername() {
+        return username;
+    }
 
-  @Override
-  public String getPassword() {
-    return password;
-  }
+ 
+   @Override
+    public String getPassword() {
+        return password;
+    }
 
-  @Override
-  public String getUsername() {
-    return username;
-  }
-
+   
   @Override
   public boolean isAccountNonExpired() {
     return true;
@@ -97,8 +99,8 @@ public class UserDetailsImpl implements UserDetails {
       return true;
     if (o == null || getClass() != o.getClass())
       return false;
-    UserDetailsImpl user = (UserDetailsImpl) o;
-    return Objects.equals(id, user.id);
+    UsuarioDetallesImpl usuario = (UsuarioDetallesImpl) o;
+    return Objects.equals(idUsuario, usuario.idUsuario);
   }
 }
 

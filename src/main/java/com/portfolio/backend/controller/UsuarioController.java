@@ -23,8 +23,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.portfolio.backend.model.ERole;
-import com.portfolio.backend.model.Role;
-import com.portfolio.backend.model.User;
+import com.portfolio.backend.model.Rol;
+import com.portfolio.backend.model.Usuario;
 import com.portfolio.backend.payload.request.LoginRequest;
 import com.portfolio.backend.payload.request.SignupRequest;
 import com.portfolio.backend.payload.response.JwtResponse;
@@ -33,7 +33,7 @@ import com.portfolio.backend.payload.response.MessageResponse;
 import com.portfolio.backend.repository.RoleRepository;
 import com.portfolio.backend.repository.UserRepository;
 import com.portfolio.backend.security.jwt.JwtUtils;
-import com.portfolio.backend.security.services.UserDetailsImpl;
+import com.portfolio.backend.security.services.UsuarioDetallesImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -62,7 +62,7 @@ public class UsuarioController {
 
     SecurityContextHolder.getContext().setAuthentication(authentication);
 
-    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+    UsuarioDetallesImpl userDetails = (UsuarioDetallesImpl) authentication.getPrincipal();
 
     //ResponseCookie jwt = jwtUtils.generateJwtCookie(userDetails);
     String jwt = jwtUtils.generateJwtToken(authentication);
@@ -72,7 +72,7 @@ public class UsuarioController {
         .collect(Collectors.toList());
 
     return ResponseEntity.ok(new JwtResponse(jwt, 
-                         userDetails.getId(), 
+                         userDetails.getIdUsuario(), 
                          userDetails.getUsername(), 
                          userDetails.getEmail(), 
                          roles));
@@ -88,35 +88,35 @@ public class UsuarioController {
       return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
     }
 
-    // Create new user's account
-    User user = new User(signUpRequest.getUsername(),
+    // Crear nueva cuenta de usuario
+    Usuario user = new Usuario(signUpRequest.getUsername(),
                          signUpRequest.getEmail(),
                          encoder.encode(signUpRequest.getPassword()));
 
-    Set<String> strRoles = signUpRequest.getRole();
-    Set<Role> roles = new HashSet<>();
+    Set<String> strRoles = signUpRequest.getRol();
+    Set<Rol> roles = new HashSet<>();
 
     if (strRoles == null) {
-      Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+      Rol userRole = roleRepository.findByRol(ERole.ROLE_USUARIO)
           .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
       roles.add(userRole);
     } else {
       strRoles.forEach(role -> {
         switch (role) {
-        case "admin":
-          Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
+        case "ADMIN":
+          Rol adminRole = roleRepository.findByRol(ERole.ROLE_ADMIN)
               .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
           roles.add(adminRole);
 
           break;
-        case "mod":
-          Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
+        case "MOD":
+          Rol modRole = roleRepository.findByRol(ERole.ROLE_MODERADOR)
               .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
           roles.add(modRole);
 
           break;
         default:
-          Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+          Rol userRole = roleRepository.findByRol(ERole.ROLE_USUARIO)
               .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
           roles.add(userRole);
         }

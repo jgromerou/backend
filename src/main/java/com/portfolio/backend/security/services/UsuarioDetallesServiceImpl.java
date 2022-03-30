@@ -7,21 +7,21 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.portfolio.backend.model.User;
+import com.portfolio.backend.model.Usuario;
 import com.portfolio.backend.repository.UserRepository;
 
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService {
+public class UsuarioDetallesServiceImpl implements UserDetailsService {
   @Autowired
   UserRepository userRepository;
 
   @Override
   @Transactional
-  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    User user = userRepository.findByUsername(username)
-        .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
+  public UserDetails loadUserByUsername(String usuario) throws UsernameNotFoundException {
+    Usuario usu = userRepository.findByUsername(usuario)
+        .orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + usuario));
 
-    return UserDetailsImpl.build(user);
+    return UsuarioDetallesImpl.build(usu);
   }
 
 }

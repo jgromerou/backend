@@ -12,7 +12,7 @@ import org.springframework.http.ResponseCookie;
 import org.springframework.stereotype.Component;
 import org.springframework.web.util.WebUtils;
 
-import com.portfolio.backend.security.services.UserDetailsImpl;
+import com.portfolio.backend.security.services.UsuarioDetallesImpl;
 import io.jsonwebtoken.*;
 import org.springframework.security.core.Authentication;
 
@@ -45,7 +45,7 @@ public class JwtUtils {
  // }
   public String generateJwtToken(Authentication authentication) {
 
-    UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
+    UsuarioDetallesImpl userPrincipal = (UsuarioDetallesImpl) authentication.getPrincipal();
 
     return Jwts.builder()
         .setSubject((userPrincipal.getUsername()))

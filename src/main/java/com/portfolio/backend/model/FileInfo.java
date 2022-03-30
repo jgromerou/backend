@@ -1,4 +1,8 @@
 package com.portfolio.backend.model;
+/**
+ *
+ * @author gerardo romero uro
+ */
 public class FileInfo {
   private String name;
   private String url;

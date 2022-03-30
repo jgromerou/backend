@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  *
- * @author gerardo
+ * @author gerardo romero uro
  */
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
