@@ -28,6 +28,11 @@ public class Usuario {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long idUsuario;
 
+  //@OneToMany(mappedBy="usuario")
+   // private Set<Habilidad> usuario;
+  //@OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+   // private  Set<Habilidad> usuario;
+  
   @NotBlank
   @NotNull
   @Size(max = 40)
@@ -69,7 +74,6 @@ public class Usuario {
   @NotNull
   private String nacionalidad;
   
-  @NotBlank
   @Size(max = 100)
   private String fotoPerfil;
 
@@ -81,11 +85,24 @@ public class Usuario {
 
   public Usuario() {
   }
+  public Usuario(Long idUsuario) {
+        super();
+        this.idUsuario = idUsuario;
+    }
+  
 
-  public Usuario(String username, String email, String password) {
+  public Usuario(String username, String email, String password, String nombres,
+          String apellidos, String telefono, String domicilio, String nacionalidad,
+          String fotoPerfil) {
     this.username = username;
     this.email = email;
     this.password = password;
+    this.nombres = nombres;
+    this.apellidos = apellidos;
+    this.telefono = telefono;
+    this.domicilio = domicilio;
+    this.nacionalidad = nacionalidad;
+    this.fotoPerfil = fotoPerfil;
   }
 
   public Long getIdUsuario() {
@@ -126,6 +143,54 @@ public class Usuario {
 
   public void setRoles(Set<Rol> roles) {
     this.roles = roles;
+  }
+  
+  public String getNombres() {
+    return nombres;
+  }
+
+  public void setNombres(String nombres) {
+    this.nombres = nombres;
+  }
+  
+  public String getApellidos() {
+    return apellidos;
+  }
+
+  public void setApellidos(String apellidos) {
+    this.apellidos = apellidos;
+  }
+  
+  public String getTelefono() {
+    return telefono;
+  }
+  
+  public void setTelefono(String telefono) {
+    this.telefono = telefono;
+  }
+
+  public String getDomicilio() {
+    return domicilio;
+  }
+  
+  public void setDomicilio(String domicilio) {
+    this.domicilio = domicilio;
+  }
+  
+  public String getNacionalidad() {
+    return nacionalidad;
+  }
+  
+  public void setNacionalidad(String nacionalidad) {
+    this.nacionalidad = nacionalidad;
+  }
+  
+  public String getFotoPerfil() {
+    return fotoPerfil;
+  }
+  
+  public void setFotoPerfil(String fotoPerfil) {
+    this.fotoPerfil = fotoPerfil;
   }
 }
 

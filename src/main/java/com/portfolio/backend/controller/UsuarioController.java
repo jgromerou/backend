@@ -91,7 +91,11 @@ public class UsuarioController {
     // Crear nueva cuenta de usuario
     Usuario user = new Usuario(signUpRequest.getUsername(),
                          signUpRequest.getEmail(),
-                         encoder.encode(signUpRequest.getPassword()));
+                         encoder.encode(signUpRequest.getPassword()),
+                         signUpRequest.getNombres(),signUpRequest.getApellidos(),
+                           signUpRequest.getTelefono(),signUpRequest.getDomicilio(),
+                            signUpRequest.getNacionalidad(),
+                            signUpRequest.getFotoperfil());
 
     Set<String> strRoles = signUpRequest.getRol();
     Set<Rol> roles = new HashSet<>();
