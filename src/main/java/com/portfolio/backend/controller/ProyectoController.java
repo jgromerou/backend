@@ -3,8 +3,8 @@ package com.portfolio.backend.controller;
  *
  * @author gerardo romero uro
  */
-import com.portfolio.backend.model.Habilidad;
-import com.portfolio.backend.service.IHabilidadService;
+import com.portfolio.backend.model.Proyecto;
+import com.portfolio.backend.service.IProyectoService;
 import java.util.HashSet;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,61 +27,67 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/habilidad")
-public class HabilidadController {
+@RequestMapping("/api/proyecto")
+public class ProyectoController {
+    @GetMapping("/hola")
+    /*@ResponseStatus(HttpStatus.OK)*/
+    public String decirHola(){
+        return "Bienvenido a Proyecto";
+    }
     @Autowired
-    private IHabilidadService interHabilidad;
+    private IProyectoService interProyecto;
     
     @GetMapping ("/traer")
     /*@PreAuthorize("hasRole('ADMIN')")*/
-    public List<Habilidad> getHabibilidades(){
-        return interHabilidad.getHabilidades();
+    public List<Proyecto> getProyectos(){
+        return interProyecto.getProyectos();
     }
     
     @PostMapping ("/crear")
-    public String createHabilidad(@RequestBody Habilidad habilidad){
-        interHabilidad.saveHabilidad(habilidad);
-        return "La Habilidad fue creada correctamente";
+    public String createProyecto(@RequestBody Proyecto proyecto){
+        interProyecto.saveProyecto(proyecto);
+        return "El Proyecto fue creado correctamente";
     }
     
     @DeleteMapping ("/borrar/{id}")
-    public String deleteHabilidad (@PathVariable Long id){
-        interHabilidad.deleteHabilidad(id);
-        return "La Habilidad fue eliminada correctamente";
+    public String deleteProyecto (@PathVariable Long id){
+        interProyecto.deleteProyecto(id);
+        return "El proyecto fue eliminado correctamente";
     }
     
     @GetMapping ("/buscarid/{id}")
-    public Habilidad getHabilidadById (@PathVariable Long id){
-        return interHabilidad.getHabilidadById(id);
+    public Proyecto getProyectoById (@PathVariable Long id){
+        return interProyecto.getProyectoById(id);
     }
     
     @GetMapping ("/buscarid")
-    public List<Habilidad> getHabilidad (){
-        return interHabilidad.getHabilidad();
+    public List<Proyecto> getProyecto (){
+        return interProyecto.getProyecto();
     }
     
-    @GetMapping ("/buscar/{habilidad}")
-    public Habilidad getHabilidadById (@PathVariable String habilidad){
-    return interHabilidad.getHabilidadByHabilidad(habilidad);
+    @GetMapping ("/buscar/{proyecto}")
+    public Proyecto getProyectoById (@PathVariable String proyecto){
+    return interProyecto.getProyectoByProyecto(proyecto);
     }
     
     @PutMapping ("/editar/{id}")
-    public Habilidad editHabilidad (@PathVariable Long id,
+    public Proyecto editProyecto (@PathVariable Long id,
                                 //@RequestParam ("nombre") String nuevoNombre,
                                 //@RequestParam ("apellido") String nuevoApellido,
                                 //@RequestParam ("edad") int nuevaEdad
-                                @RequestBody Habilidad hab){
+                                @RequestBody Proyecto hab){
         //busco la persona por id
-        Habilidad habilidad = interHabilidad.getHabilidadById(id);
+        Proyecto proyecto = interProyecto.getProyectoById(id);
         
         //setter
-        habilidad.setHabilidad(hab.getHabilidad());
-        habilidad.setPorcentaje_habilidad(hab.getPorcentaje_habilidad());
+     //habilidad.setProyecto(hab.getProyecto());
+       // habilidad.setPorcentaje_habilidad(hab.getPorcentaje_habilidad());
         
-        interHabilidad.saveHabilidad(habilidad);
+        interProyecto.saveProyecto(proyecto);
         
-        //retorna la nueva habilidad
-        return habilidad;
+        //retorna el nuevo proyecto
+        return proyecto;
         
     }
 }
+

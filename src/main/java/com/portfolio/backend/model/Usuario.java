@@ -27,11 +27,6 @@ public class Usuario {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long idUsuario;
-
-  //@OneToMany(mappedBy="usuario")
-   // private Set<Habilidad> usuario;
-  //@OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
-   // private  Set<Habilidad> usuario;
   
   @NotBlank
   @NotNull
