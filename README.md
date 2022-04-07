@@ -12,5 +12,4 @@ METODO | #Url de Usuario | #Acción | #JSON de envio
 POST | /auth/login | Iniciar sesión de usuario ADMIN | {"username":"admin","password":"123456"}
 POST | /auth/login | Iniciar sesión de usuario MOD | {"username":"mod","password":"123456"}
 POST | /auth/login | Iniciar sesión de usuario USUARIO | {"username":"usuario","password":"123456"}
-POST | /auth/registrar | Registrar un usuario FULL permiso | {"username":"admin","password":"123456","email":"admin@admin.com","rol":["ADMIN","MOD","USUARIO"],"nombres":"gerardo","apellidos":"romero",
-"telefono":"222222","domicilio":"micasa","nacionalidad":"argentina","fotoperfil":""}
+POST | /auth/registrar | Registrar un usuario FULL permiso | {"username":"admin","password":"123456","email":"admin@admin.com","rol":["ADMIN","MOD","USUARIO"],"nombres":"gerardo","apellidos":"romero","telefono":"222222","domicilio":"micasa","nacionalidad":"argentina","fotoperfil":""}
