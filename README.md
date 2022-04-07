@@ -8,5 +8,5 @@ URL -> https://www.backendargentinaprograma.heroku.com/api/
 #Métodos de Usuario
 
 METODO | #Url de Usuario | #Acción | #JSON de envio 
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+--- | --- | --- | --- 
 POST | /auth/login | Iniciar sesión de usuario | {"username":"admin","password":"123456"}
