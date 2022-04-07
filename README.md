@@ -26,7 +26,17 @@ GET | /test/admin | Muestra "Contenido de Admin" |
 # Métodos de Imagen
 METODO | #Url de Imagen | #Acción | #JSON de envio 
 ---  | --- | --- | --- 
-POST | /test/upload | Cargar una imagen y se guarda en la carpeta uploads | form-data -> key: file && vale: select files (POSTMAN)
+POST | /test/upload | Cargar una imagen y se guarda en la carpeta uploads | form-data -> key: file && value: select files (POSTMAN)
 GET  | /test/files | Muestra listado de imagenes (nombre y URL) | 
 GET  | /test/filesget/{filename:...} | Muestra la imagen dada por la URL
 GET  | /test/files/{filename:...} | Descarga la imagen dada por la URL  
+
+# Métodos de Habilidad
+METODO | #Url de Habilidad | #Acción | #JSON de envio 
+--- | --- | --- | --- 
+POST   | /habilidad/crear | Muestra "Contenido Público" | 
+GET    | /test/usuario | Muestra "Contenido de Usuario" | 
+DELETE | /test/mod | Muestra "Contenido de Moderador" | 
+GET    | /test/admin | Muestra "Contenido de Admin" | 
+GET    | /test/admin | Muestra "Contenido de Admin" | 
+OU     | /test/admin | Muestra "Contenido de Admin" | 
