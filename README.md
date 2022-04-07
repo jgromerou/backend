@@ -1,6 +1,12 @@
 # Backend Portfolio Argentina Programa
 Spring-boot del Backend Portfolio Argentina Programa
 
-Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
+# Llamadas a la API
+
+URL -> https://www.backendargentinaprograma.heroku.com/api/
+
+#Métodos de Usuario
+
+METODO | #Url de Usuario | #Acción | #JSON de envio 
 --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+POST | /auth/login | Iniciar sesión de usuario | {"username":"admin","password":"123456"}
