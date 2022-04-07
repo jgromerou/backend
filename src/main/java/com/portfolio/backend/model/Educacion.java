@@ -1,5 +1,6 @@
 package com.portfolio.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import java.util.Set;
@@ -46,15 +47,14 @@ public class Educacion {
     
     @NotBlank
     @NotNull
-    private Date fechaInicio;
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
+    private String fechaInicio;
     
     @NotBlank
-    private Date fechaFin;
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
+    private String fechaFin;
     
-    @NotBlank
-    @NotNull
-    private int porcentajeCarrera;
-    
+    private int porcentaje_carrera;
     
     @ManyToOne
     @JoinColumn(name ="idUsuario", insertable = true,

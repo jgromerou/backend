@@ -15,40 +15,6 @@ public class EducacionService implements IEducacionService{
     @Autowired
     private EducacionRepository educacionRepository;
 
-    /*@Override
-    public List<ExperienciaLaboral> getExperienciasLaborales() {
-        List<ExperienciaLaboral> listaExperienciasLaborales = experienciaLaboralRepository.findAll();
-        return listaExperienciasLaborales;
-    }
-
-    @Override
-    public void saveExperienciaLaboral(ExperienciaLaboral experienciaLaboral) {
-       experienciaLaboralRepository.save(experienciaLaboral);
-    }
-
-    @Override
-    public void deleteExperienciaLaboral(Long id) {
-        experienciaLaboralRepository.deleteById(id);
-    }
-
-    @Override
-    public ExperienciaLaboral getExperienciasLaboralesById(Long id) {
-        ExperienciaLaboral listaExperienciasLaborales = experienciaLaboralRepository.getExperienciasLaboralesById(id);
-        return listaExperienciasLaborales;
-    }
-
-    @Override
-    public ExperienciaLaboral getExperienciasLaboralesByExperienciaLaboral(String experiencialaboral) {
-        ExperienciaLaboral listaExperienciaLaborales = experienciaLaboralRepository.getExperienciasLaboralesByExperienciaLaboral(experiencialaboral);
-        return listaExperienciaLaborales;
-    }
-
-    @Override
-    public List<ExperienciaLaboral> getExperienciaLaboral() {
-        List<ExperienciaLaboral> listaExperienciaLaboral = experienciaLaboralRepository.getExperienciasLaborales();
-        return listaExperienciaLaboral;
-    }*/
-
     @Override
     public List<Educacion> getEducaciones() {
         List<Educacion> listaEducacion = educacionRepository.findAll();
@@ -72,9 +38,9 @@ public class EducacionService implements IEducacionService{
     }
 
     @Override
-    public Educacion getEducacionByEducacion(String educacion) {
-        Educacion listaEducacion = educacionRepository.getEducacionByEducacion(educacion);
-        return listaEducacion;
+    public List<Educacion> getEducacionByInstituto(String instituto) {
+        List<Educacion> listaInstitutos = educacionRepository.getEducacionByInstitucion(instituto);
+        return listaInstitutos;
     }
 
     @Override

@@ -38,8 +38,8 @@ public class HabilidadService implements IHabilidadService{
     }
 
     @Override
-    public Habilidad getHabilidadByHabilidad(String habilidad) {
-        Habilidad listaHabilidades = habilidadRepository.getHabilidadByHablidad(habilidad);
+    public List<Habilidad> getHabilidadByNombre(String habilidad) {
+        List<Habilidad> listaHabilidades = habilidadRepository.getHabilidadByNombre(habilidad);
         return listaHabilidades;
     }
 

@@ -32,15 +32,15 @@ public class ExperienciaLaboralService implements IExperienciaLaboralService{
     }
 
     @Override
-    public ExperienciaLaboral getExperienciasLaboralesById(Long id) {
-        ExperienciaLaboral listaExperienciasLaborales = experienciaLaboralRepository.getExperienciasLaboralesById(id);
+    public ExperienciaLaboral getExperienciaLaboralById(Long id) {
+        ExperienciaLaboral listaExperienciasLaborales = experienciaLaboralRepository.getExperienciaLaboralById(id);
         return listaExperienciasLaborales;
     }
 
     @Override
-    public ExperienciaLaboral getExperienciasLaboralesByExperienciaLaboral(String experiencialaboral) {
-        ExperienciaLaboral listaExperienciaLaborales = experienciaLaboralRepository.getExperienciasLaboralesByExperienciaLaboral(experiencialaboral);
-        return listaExperienciaLaborales;
+    public List<ExperienciaLaboral> getExperienciaLaboralByEmpresa(String empresa) {
+        List<ExperienciaLaboral> listaEmpresa = experienciaLaboralRepository.getExperienciaLaboralByEmpresa(empresa);
+        return listaEmpresa;
     }
 
     @Override

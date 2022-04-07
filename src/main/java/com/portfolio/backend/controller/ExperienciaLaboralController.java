@@ -28,13 +28,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/experiencialab")
+@RequestMapping("/api/experiencialaboral")
 public class ExperienciaLaboralController {
-    @GetMapping("/hola")
-    /*@ResponseStatus(HttpStatus.OK)*/
-    public String decirHola(){
-        return "Bienvenido a ExperienciaLaboral";
-    }
     @Autowired
     private IExperienciaLaboralService interExperienciaLaboral;
     
@@ -57,8 +52,8 @@ public class ExperienciaLaboralController {
     }
     
     @GetMapping ("/buscarid/{id}")
-    public ExperienciaLaboral getExperienciasLaboralesById (@PathVariable Long id){
-        return interExperienciaLaboral.getExperienciasLaboralesById(id);
+    public ExperienciaLaboral getExperienciaLaboralById (@PathVariable Long id){
+        return interExperienciaLaboral.getExperienciaLaboralById(id);
     }
     
     @GetMapping ("/buscarid")
@@ -66,9 +61,9 @@ public class ExperienciaLaboralController {
         return interExperienciaLaboral.getExperienciaLaboral();
     }
     
-    @GetMapping ("/buscar/{experienciaLaboral}")
-    public ExperienciaLaboral getExperienciaLaboralById (@PathVariable String experienciaLaboral){
-    return interExperienciaLaboral.getExperienciasLaboralesByExperienciaLaboral(experienciaLaboral);
+    @GetMapping ("/buscarempresa/{empresa}")
+    public List<ExperienciaLaboral> getExperienciaLaboralById (@PathVariable String empresa){
+    return interExperienciaLaboral.getExperienciaLaboralByEmpresa(empresa);
     }
     
     @PutMapping ("/editar/{id}")
@@ -76,17 +71,21 @@ public class ExperienciaLaboralController {
                                 //@RequestParam ("nombre") String nuevoNombre,
                                 //@RequestParam ("apellido") String nuevoApellido,
                                 //@RequestParam ("edad") int nuevaEdad
-                                @RequestBody ExperienciaLaboral experiencialab){
-        //busco la persona por id
-        ExperienciaLaboral experienciaLaboral = interExperienciaLaboral.getExperienciasLaboralesById(id);
+                                @RequestBody ExperienciaLaboral exp){
+        //busco la experiencia laboral por id
+        ExperienciaLaboral experienciaLaboral = interExperienciaLaboral.getExperienciaLaboralById(id);
         
         //setter
-        //experienciaLaboral.setExperienciaLaboral(experiencialabaLaboral());
-        //experienciaLaboral..getPorcentaje_experienciaLaboral());
+        experienciaLaboral.setEmpresa(exp.getEmpresa());
+        experienciaLaboral.setPuesto(exp.getPuesto());
+        experienciaLaboral.setFechaInicio(exp.getFechaInicio());
+        experienciaLaboral.setFechaFin(exp.getFechaFin());
+        experienciaLaboral.setDescripcionTareas(exp.getDescripcionTareas());
+        experienciaLaboral.setUsuario(exp.getUsuario());
         
         interExperienciaLaboral.saveExperienciaLaboral(experienciaLaboral);
         
-        //retorna la nueva experienciaLaboral
+        //retorna la nueva experienciaLaboral con las modificaciones
         return experienciaLaboral;
         
     }

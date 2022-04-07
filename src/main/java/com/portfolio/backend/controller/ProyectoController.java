@@ -29,11 +29,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @RestController
 @RequestMapping("/api/proyecto")
 public class ProyectoController {
-    @GetMapping("/hola")
-    /*@ResponseStatus(HttpStatus.OK)*/
-    public String decirHola(){
-        return "Bienvenido a Proyecto";
-    }
     @Autowired
     private IProyectoService interProyecto;
     
@@ -65,23 +60,21 @@ public class ProyectoController {
         return interProyecto.getProyecto();
     }
     
-    @GetMapping ("/buscar/{proyecto}")
-    public Proyecto getProyectoById (@PathVariable String proyecto){
-    return interProyecto.getProyectoByProyecto(proyecto);
+    @GetMapping ("/buscarnombre/{proyecto}")
+    public List<Proyecto> getProyectoById (@PathVariable String proyecto){
+    return interProyecto.getProyectoByNombre(proyecto);
     }
     
     @PutMapping ("/editar/{id}")
     public Proyecto editProyecto (@PathVariable Long id,
-                                //@RequestParam ("nombre") String nuevoNombre,
-                                //@RequestParam ("apellido") String nuevoApellido,
-                                //@RequestParam ("edad") int nuevaEdad
-                                @RequestBody Proyecto hab){
-        //busco la persona por id
+                                @RequestBody Proyecto proy){
+        //busco el proyecto por id
         Proyecto proyecto = interProyecto.getProyectoById(id);
         
         //setter
-     //habilidad.setProyecto(hab.getProyecto());
-       // habilidad.setPorcentaje_habilidad(hab.getPorcentaje_habilidad());
+        proyecto.setProyecto(proy.getProyecto());
+        proyecto.setTecnologia(proy.getTecnologia());
+        proyecto.setUsuario(proy.getUsuario());
         
         interProyecto.saveProyecto(proyecto);
         

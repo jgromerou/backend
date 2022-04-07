@@ -19,6 +19,6 @@ public interface ProyectoRepository extends JpaRepository<Proyecto, Long> {
     List<Proyecto> getProyecto();
     
     @Query(value= "SELECT * FROM proyectos where proyecto like %?1%", nativeQuery = true)
-    Proyecto getProyectoByProyecto(String proyecto);
+    List<Proyecto> getProyectoByNombre(String proyecto);
 }
 

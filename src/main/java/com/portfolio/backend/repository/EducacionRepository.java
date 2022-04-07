@@ -12,13 +12,13 @@ import org.springframework.stereotype.Repository;
 @Repository
 
 public interface EducacionRepository extends JpaRepository<Educacion, Long> {
-    @Query(value= "SELECT * FROM exp... where id_experiencia...=?1", nativeQuery = true)
+    @Query(value= "SELECT * FROM educacion where id_educacion=?1", nativeQuery = true)
      Educacion getEducacionById(Long id);
 
-    @Query(value= "SELECT * FROM experie....", nativeQuery = true)
+    @Query(value= "SELECT * FROM educacion", nativeQuery = true)
     List<Educacion> getEducaciones();
     
-    @Query(value= "SELECT * FROM exp... where exp.. like %?1%", nativeQuery = true)
-    Educacion getEducacionByEducacion(String educacion);
+    @Query(value= "SELECT * FROM educacion where institucion like %?1%", nativeQuery = true)
+    List<Educacion> getEducacionByInstitucion(String educacion);
 }
 

@@ -12,12 +12,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 
 public interface ExperienciaLaboralRepository extends JpaRepository<ExperienciaLaboral, Long> {
-    @Query(value= "SELECT * FROM exp... where id_experiencia...=?1", nativeQuery = true)
-     ExperienciaLaboral getExperienciasLaboralesById(Long id);
+    @Query(value= "SELECT * FROM experienciaslaborales where id_experiencia_laboral=?1", nativeQuery = true)
+     ExperienciaLaboral getExperienciaLaboralById(Long id);
 
-    @Query(value= "SELECT * FROM experie....", nativeQuery = true)
+    @Query(value= "SELECT * FROM experienciaslaborales", nativeQuery = true)
     List<ExperienciaLaboral> getExperienciasLaborales();
     
-    @Query(value= "SELECT * FROM exp... where exp.. like %?1%", nativeQuery = true)
-    ExperienciaLaboral getExperienciasLaboralesByExperienciaLaboral(String experiencialaboral);
+    @Query(value= "SELECT * FROM experienciaslaborales where empresa like %?1%", nativeQuery = true)
+    List<ExperienciaLaboral> getExperienciaLaboralByEmpresa(String empresa);
 }

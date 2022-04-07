@@ -22,7 +22,7 @@ public interface IProyectoService {
     public Proyecto getProyectoById(Long id);
     
     //método para buscar una proyecto por nombre de proyecto
-    public Proyecto getProyectoByProyecto(String proyecto);
+    public List<Proyecto> getProyectoByNombre(String proyecto);
 
     public List<Proyecto> getProyecto();
 }

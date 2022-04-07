@@ -60,9 +60,9 @@ public class HabilidadController {
         return interHabilidad.getHabilidad();
     }
     
-    @GetMapping ("/buscar/{habilidad}")
-    public Habilidad getHabilidadById (@PathVariable String habilidad){
-    return interHabilidad.getHabilidadByHabilidad(habilidad);
+    @GetMapping ("/buscarnombre/{habilidad}")
+    public List<Habilidad> getHabilidadByNombre (@PathVariable String habilidad){
+    return interHabilidad.getHabilidadByNombre(habilidad);
     }
     
     @PutMapping ("/editar/{id}")
@@ -77,6 +77,7 @@ public class HabilidadController {
         //setter
         habilidad.setHabilidad(hab.getHabilidad());
         habilidad.setPorcentaje_habilidad(hab.getPorcentaje_habilidad());
+        habilidad.setUsuario(hab.getUsuario());
         
         interHabilidad.saveHabilidad(habilidad);
         

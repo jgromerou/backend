@@ -29,7 +29,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @Controller
-/*CrossOrigin("http://localhost:8081")*/
+/*CrossOrigin("http://localhost:8080")*/
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/test")
@@ -41,7 +41,7 @@ public class FilesController {
     String message = "";
     try {
       storageService.save(file);
-      message = "Uploaded the file successfully: " + file.getOriginalFilename();
+      message = "Se subió el archivo con éxito.";
       return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
     } catch (Exception e) {
       message = "Could not upload the file: " + file.getOriginalFilename() + "!";

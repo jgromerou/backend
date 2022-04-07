@@ -1,0 +1,1024 @@
+{
+	"info": {
+		"_postman_id": "c5d6f411-2b5c-48aa-815c-ad1c29db472d",
+		"name": "backend argentina programa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login mod",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"moderador3\",\n    \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"usuario\",\n    \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"moderador3\",\n    \"password\":\"123456\",\n    \"email\":\"mod3@umod3.com\",\n    \"rol\":[\"MOD\"],\n    \"nombres\":\"maria\",\n    \"apellidos\":\"romero\",\n    \"telefono\":\"2222\",\n    \"domicilio\":\"sucasa\",\n    \"nacionalidad\":\"argentina\",\n    \"fotoperfil\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/publico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/test/publico",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"publico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/mod",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2RlcmFkb3IzIiwiaWF0IjoxNjQ5MzMwMzU2LCJleHAiOjE2NDk0MTY3NTZ9.dZ3Z7MigDo6_ld3qiM9bB4mTg8ZRTtNABnBHNc3pOYhOOjKbdhAztncVZfVkdlMo18Oy9pPRQ-l4UbqLVI3p2A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/test/mod",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"mod"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0OTMzMDQxNywiZXhwIjoxNjQ5NDE2ODE3fQ.4o8Q0VACrwMMVrYXTpl6o7TnH0tDfGAdHjVEE39bWIrXY4SbJgKLGIawlmpFTw4FIu97RPII3ycB6pgj4sj01A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/test/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gerardo/Descargas/pinguino.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"upload"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/files (listado de imagenes)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gerardo/Descargas/pinguino.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"files"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/filesget/{filesname:'nombre del archivo'} mostrar imagen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gerardo/Descargas/pinguino.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/filesget/nature-3082832__480202203261551.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"filesget",
+						"nature-3082832__480202203261551.jpg"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/files/{'filesname:'nombre del archivo'} - Descargar imagen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gerardo/Descargas/pinguino.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/files/nature-3082832__480202203261551.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"files",
+						"nature-3082832__480202203261551.jpg"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"habilidad\":\"Desarrollo de backend\",\n    \"porcentaje_habilidad\":\"50\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/habilidad/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"habilidad",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/traer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/habilidad/traer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"habilidad",
+						"traer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/borrar/{id} Eliminar por id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"habilidad\":\"Desarrollo de backend\",\n    \"porcentaje_habilidad\":\"50\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/habilidad/borrar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"habilidad",
+						"borrar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/buscarid/{id} Buscar por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/habilidad/buscarid/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"habilidad",
+						"buscarid",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/buscarnombre/{nombre} Buscar por nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/habilidad/buscarnombre/desarrollo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"habilidad",
+						"buscarnombre",
+						"desarrollo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/editar/{id} Editar una habilidad",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"habilidad\":\"desarrollador de juegos\",\n    \"porcentaje_habilidad\":30,\n    \"id_usuario\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/habilidad/editar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"habilidad",
+						"editar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "experiencialaboral/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"empresa\":\"UNT\",\n    \"puesto\":\"profesor de Electronica I\",\n    \"fechaInicio\":\"20032022\",\n    \"fechaFin\":\"21092022\",\n    \"descripcionTareas\":\"enseñar materiales\",\n    \"usuario\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/experiencialaboral/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"experiencialaboral",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "experiencialaboral/traer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/experiencialaboral/traer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"experiencialaboral",
+						"traer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "experiencialaboral/borrar/{id} Eliminar por id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"habilidad\":\"Desarrollo de backend\",\n    \"porcentaje_habilidad\":\"50\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/experiencialaboral/borrar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"experiencialaboral",
+						"borrar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "experiencialaboral/buscarid/{id} Buscar por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/experiencialaboral/buscarid/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"experiencialaboral",
+						"buscarid",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "experiencialaboral/buscarempresa/{empresa} Buscar por nombre empresa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/experiencialaboral/buscarempresa/sagrado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"experiencialaboral",
+						"buscarempresa",
+						"sagrado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/editar/{id} Editar una experiencia laboral",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"empresa\":\"prueba\",\n    \"puesto\":\"prueba de puesto\",\n    \"fechaInicio\":\"20032022\",\n    \"fechaFin\":\"21092022\",\n    \"descripcionTareas\":\"enseñar materiales\",\n    \"usuario\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/experiencialaboral/editar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"experiencialaboral",
+						"editar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proyecto/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proyecto\":\"lista de alumnos\",\n    \"tecnologia\":\"Angular JS, Node Js, Mysql\",\n    \"usuario\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proyecto/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proyecto",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proyecto/traer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proyecto/traer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proyecto",
+						"traer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proyecto/borrar/{id} Eliminar por id proyecto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proyecto/borrar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proyecto",
+						"borrar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proyecto/buscarid/{id} Buscar por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proyecto/buscarid/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proyecto",
+						"buscarid",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proyecto/buscarnombre/{nombre} Buscar por nombre proyecto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proyecto/buscarnombre/empresa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proyecto",
+						"buscarnombre",
+						"empresa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proyecto/editar/{id} Editar un proyecto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proyecto\":\"CRUD en Base de dato MySQL\",\n    \"tecnologia\":\"MySQL\",\n    \"usuario\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proyecto/editar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proyecto",
+						"editar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educacion/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"institucion\":\"Tulio\",\n    \"titulo\":\"Bachiller\",\n    \"fechaInicio\":\"03032002\",\n    \"fechaFin\":\"10102008\",\n    \"porcentaje_carrera\":100,\n    \"usuario\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/educacion/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"educacion",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educacion/traer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/educacion/traer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"educacion",
+						"traer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educacion/borrar/{id} Eliminar por id educacion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/educacion/borrar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"educacion",
+						"borrar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educacion/buscarid/{id} Buscar por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/educacion/buscarid/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"educacion",
+						"buscarid",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educacion/buscarinstitucion/{institucion} Buscar por nombre institucion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/educacion/buscarinstitucion/sagrado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"educacion",
+						"buscarinstitucion",
+						"sagrado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educacion/editar/{id} Editar una educación",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"institucion\":\"Belgrano\",\n    \"titulo\":\"Perito Mercantil\",\n    \"fechaInicio\":\"03032002\",\n    \"fechaFin\":\"10102008\",\n    \"porcentaje_carrera\":75,\n    \"usuario\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/educacion/editar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"educacion",
+						"editar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

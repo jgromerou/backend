@@ -54,7 +54,7 @@ public class UsuarioController {
   @Autowired
   JwtUtils jwtUtils;
 
-  @PostMapping("/signin")
+  @PostMapping("/login")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
     Authentication authentication = authenticationManager
@@ -78,14 +78,14 @@ public class UsuarioController {
                          roles));
   }
 
-  @PostMapping("/signup")
+  @PostMapping("/registrar")
   public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
     if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-      return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
+      return ResponseEntity.badRequest().body(new MessageResponse("Error: Este nombre de usuario ya está en uso."));
     }
 
     if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-      return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
+      return ResponseEntity.badRequest().body(new MessageResponse("Error: Este email ya está en uso."));
     }
 
     // Crear nueva cuenta de usuario
@@ -102,26 +102,26 @@ public class UsuarioController {
 
     if (strRoles == null) {
       Rol userRole = roleRepository.findByRol(ERole.ROLE_USUARIO)
-          .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+          .orElseThrow(() -> new RuntimeException("Error: Rol no está funcionando."));
       roles.add(userRole);
     } else {
       strRoles.forEach(role -> {
         switch (role) {
         case "ADMIN":
           Rol adminRole = roleRepository.findByRol(ERole.ROLE_ADMIN)
-              .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+              .orElseThrow(() -> new RuntimeException("Error: Rol no está funcionando."));
           roles.add(adminRole);
 
           break;
         case "MOD":
           Rol modRole = roleRepository.findByRol(ERole.ROLE_MODERADOR)
-              .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+              .orElseThrow(() -> new RuntimeException("Error: Rol no está funcionando."));
           roles.add(modRole);
 
           break;
         default:
           Rol userRole = roleRepository.findByRol(ERole.ROLE_USUARIO)
-              .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+              .orElseThrow(() -> new RuntimeException("Error: Rol no está funcionando."));
           roles.add(userRole);
         }
       });
@@ -130,14 +130,14 @@ public class UsuarioController {
     user.setRoles(roles);
     userRepository.save(user);
 
-    return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+    return ResponseEntity.ok(new MessageResponse("Usuario registrado correctamente"));
   }
 
-  @PostMapping("/signout")
+  @PostMapping("/logout")
   public ResponseEntity<?> logoutUser() {
     ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
     return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString())
-        .body(new MessageResponse("You've been signed out!"));
+        .body(new MessageResponse("Has sido desconectado."));
   }
 }
 

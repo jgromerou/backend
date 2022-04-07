@@ -22,7 +22,7 @@ public interface IHabilidadService {
     public Habilidad getHabilidadById(Long id);
     
     //método para buscar una habilidad por nombre de habilidad
-    public Habilidad getHabilidadByHabilidad(String habilidad);
+    public List<Habilidad> getHabilidadByNombre(String habilidad);
 
     public List<Habilidad> getHabilidad();
 }

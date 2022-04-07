@@ -1,5 +1,6 @@
 package com.portfolio.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Date;
 import java.util.Set;
@@ -41,20 +42,24 @@ public class ExperienciaLaboral {
    
     @NotBlank
     @NotNull
-    @Size(max = 40)
+    
     private String puesto;
     
     @NotBlank
     @NotNull
-    private Date fechaInicio;
+    @Size(max = 40)
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
+    private String fechaInicio;
     
     @NotBlank
-    private Date fechaFin;
+    @Size(max = 40)
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
+    private String fechaFin;
     
     @NotBlank
     @NotNull
     @Size(max = 255)
-    private String decripcionTareas;
+    private String descripcionTareas;
     
     
     @ManyToOne

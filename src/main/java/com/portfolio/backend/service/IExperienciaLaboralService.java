@@ -19,10 +19,10 @@ public interface IExperienciaLaboralService {
     public void deleteExperienciaLaboral(Long id);
 
     //método para buscar una ExperienciaLaboral por id
-    public ExperienciaLaboral getExperienciasLaboralesById(Long id);
+    public ExperienciaLaboral getExperienciaLaboralById(Long id);
     
-    //método para buscar una habilidad por nombre de habilidad
-    public ExperienciaLaboral getExperienciasLaboralesByExperienciaLaboral(String experiencialaboral);
+    //método para buscar una habilidad por nombre de empresa
+    public List<ExperienciaLaboral> getExperienciaLaboralByEmpresa(String empresa);
 
     public List<ExperienciaLaboral> getExperienciaLaboral();
 }

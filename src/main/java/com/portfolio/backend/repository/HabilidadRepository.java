@@ -19,6 +19,6 @@ public interface HabilidadRepository extends JpaRepository<Habilidad, Long> {
     List<Habilidad> getHabilidad();
     
     @Query(value= "SELECT * FROM habilidades where habilidad like %?1%", nativeQuery = true)
-    Habilidad getHabilidadByHablidad(String habilidad);
+    List<Habilidad> getHabilidadByNombre(String habilidad);
 }
 

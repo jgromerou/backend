@@ -21,8 +21,8 @@ public interface IEducacionService {
     //método para buscar una educacion por id
     public Educacion getEducacionById(Long id);
     
-    //método para buscar una educacion por nombre 
-    public Educacion getEducacionByEducacion(String educacion);
+    //método para buscar una educacion por instituto 
+    public List<Educacion> getEducacionByInstituto(String educacion);
 
     public List<Educacion> getEducacion();
 }
