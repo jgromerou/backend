@@ -32,13 +32,13 @@ public class SwaggerConfig {
 	
 private ApiInfo getApiInfo() {
 		return new ApiInfo(
-				"Order Service API",
-				"Order Service API Description",
+				"Portfolio Backend Servicios de API",
+				"Portfolio Backend Servicios de API Descripción",
 				"1.0",
-				"http://codmind.com/terms",
-				new Contact("prueba", "https://prueba", "prueba@prueba.com"),
-				"LICENSE",
-				"LICENSE URL",
+				"https://backendargentinaprograma.herokuapp.com/api/",
+				new Contact("Gerardo Romero Uro", "https://backendargentinaprograma.herokuapp.com/api", "jgromerouro@gmail.com"),
+				"LIC.",
+				"LIC. URL",
 				Collections.emptyList()
 				);
 	}
