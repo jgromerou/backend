@@ -39,12 +39,14 @@ public class ExperienciaLaboralController {
         return interExperienciaLaboral.getExperienciasLaborales();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/crear")
     public String createExperienciaLaboral(@RequestBody ExperienciaLaboral experienciaLaboral){
         interExperienciaLaboral.saveExperienciaLaboral(experienciaLaboral);
         return "La experienciaLaboral fue creada correctamente";
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/borrar/{id}")
     public String deleteExperienciaLaboral (@PathVariable Long id){
         interExperienciaLaboral.deleteExperienciaLaboral(id);
@@ -66,6 +68,7 @@ public class ExperienciaLaboralController {
     return interExperienciaLaboral.getExperienciaLaboralByEmpresa(empresa);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/editar/{id}")
     public ExperienciaLaboral editExperienciaLaboral (@PathVariable Long id,
                                 //@RequestParam ("nombre") String nuevoNombre,

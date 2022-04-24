@@ -38,12 +38,14 @@ public class ProyectoController {
         return interProyecto.getProyectos();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/crear")
     public String createProyecto(@RequestBody Proyecto proyecto){
         interProyecto.saveProyecto(proyecto);
         return "El Proyecto fue creado correctamente";
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/borrar/{id}")
     public String deleteProyecto (@PathVariable Long id){
         interProyecto.deleteProyecto(id);
@@ -65,6 +67,7 @@ public class ProyectoController {
     return interProyecto.getProyectoByNombre(proyecto);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/editar/{id}")
     public Proyecto editProyecto (@PathVariable Long id,
                                 @RequestBody Proyecto proy){

@@ -38,12 +38,14 @@ public class HabilidadController {
         return interHabilidad.getHabilidades();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/crear")
     public String createHabilidad(@RequestBody Habilidad habilidad){
         interHabilidad.saveHabilidad(habilidad);
         return "La Habilidad fue creada correctamente";
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/borrar/{id}")
     public String deleteHabilidad (@PathVariable Long id){
         interHabilidad.deleteHabilidad(id);
@@ -65,6 +67,7 @@ public class HabilidadController {
     return interHabilidad.getHabilidadByNombre(habilidad);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/editar/{id}")
     public Habilidad editHabilidad (@PathVariable Long id,
                                 //@RequestParam ("nombre") String nuevoNombre,

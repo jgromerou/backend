@@ -37,12 +37,14 @@ public class EducacionController {
         return interEducacion.getEducaciones();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/crear")
     public String createEducacion(@RequestBody Educacion educacion){
         interEducacion.saveEducacion(educacion);
         return "La educación fue creado correctamente";
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping ("/borrar/{id}")
     public String deleteEducacion (@PathVariable Long id){
         interEducacion.deleteEducacion(id);
@@ -64,6 +66,7 @@ public class EducacionController {
     return interEducacion.getEducacionByInstituto(instituto);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping ("/editar/{id}")
     public Educacion editEducacion (@PathVariable Long id,
                                 @RequestBody Educacion edu){

@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @Controller
@@ -36,6 +37,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class FilesController {
   @Autowired
   FilesStorageService storageService;
+  
+  @PreAuthorize("hasRole('ADMIN')")
   @PostMapping("/upload")
   public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
     String message = "";

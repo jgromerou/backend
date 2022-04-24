@@ -1,5 +1,7 @@
 package com.portfolio.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.util.Date;
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -43,6 +45,10 @@ public class Persona {
   @NotNull
   private String email;
   
+  @NotNull
+  @JsonFormat(pattern="yyyy-MM-dd")
+    private Date fechanacimiento;
+  
   @NotBlank
   @Size(max = 15)
   @NotNull
@@ -58,6 +64,11 @@ public class Persona {
   @NotNull
   private String nacionalidad;
   
+  @NotBlank
+  @Size(max = 40)
+  @NotNull
+  private String estadocivil;
+  
   @Size(max = 100)
   private String fotoPerfil;
   
@@ -69,16 +80,19 @@ public class Persona {
     }
   
 
-  public Persona(String email, String nombres,
-          String apellidos, String telefono, String domicilio, String nacionalidad,
-          String fotoPerfil) {
+  public Persona( String nombres,String apellidos, String email,
+           Date fechanacimiento, String telefono, String domicilio, String nacionalidad,
+          String estadocivil, String fotoPerfil) {
    
-    this.email = email;
+    
     this.nombres = nombres;
     this.apellidos = apellidos;
+    this.email = email;
+    this.fechanacimiento = fechanacimiento;
     this.telefono = telefono;
     this.domicilio = domicilio;
     this.nacionalidad = nacionalidad;
+    this.estadocivil = estadocivil;
     this.fotoPerfil = fotoPerfil;
   }
 
@@ -86,17 +100,11 @@ public class Persona {
     return idPersona;
   }
 
-  public void setId(Long idPersona) {
+  public void setIdPersona(Long idPersona) {
     this.idPersona = idPersona;
   }
 
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
+ 
   
   public String getNombres() {
     return nombres;
@@ -112,6 +120,22 @@ public class Persona {
 
   public void setApellidos(String apellidos) {
     this.apellidos = apellidos;
+  }
+  
+   public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+  
+   public Date getFechanacimiento() {
+    return fechanacimiento;
+  }
+
+  public void setFechanacimiento(Date fechanacimiento) {
+    this.fechanacimiento = fechanacimiento;
   }
   
   public String getTelefono() {
@@ -136,6 +160,14 @@ public class Persona {
   
   public void setNacionalidad(String nacionalidad) {
     this.nacionalidad = nacionalidad;
+  }
+  
+   public String getEstadocivil() {
+    return estadocivil;
+  }
+  
+  public void setEstadocivil(String estadocivil) {
+    this.estadocivil = estadocivil;
   }
   
   public String getFotoPerfil() {

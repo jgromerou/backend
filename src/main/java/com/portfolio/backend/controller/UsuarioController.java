@@ -34,6 +34,7 @@ import com.portfolio.backend.repository.RoleRepository;
 import com.portfolio.backend.repository.UserRepository;
 import com.portfolio.backend.security.jwt.JwtUtils;
 import com.portfolio.backend.security.services.UsuarioDetallesImpl;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -73,11 +74,11 @@ public class UsuarioController {
 
     return ResponseEntity.ok(new JwtResponse(jwt, 
                          userDetails.getIdUsuario(), 
-                         userDetails.getUsername(), 
-                          
+                         userDetails.getUsername(),            
                          roles));
   }
 
+  
   @PostMapping("/registrar")
   public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
     if (userRepository.existsByUsername(signUpRequest.getUsername())) {
@@ -102,12 +103,6 @@ public class UsuarioController {
           Rol adminRole = roleRepository.findByRol(ERole.ROLE_ADMIN)
               .orElseThrow(() -> new RuntimeException("Error: Rol no está funcionando."));
           roles.add(adminRole);
-
-          break;
-        case "MOD":
-          Rol modRole = roleRepository.findByRol(ERole.ROLE_MODERADOR)
-              .orElseThrow(() -> new RuntimeException("Error: Rol no está funcionando."));
-          roles.add(modRole);
 
           break;
         default:
