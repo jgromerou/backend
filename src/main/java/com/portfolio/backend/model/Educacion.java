@@ -57,8 +57,8 @@ public class Educacion {
     private int porcentaje_carrera;
     
     @ManyToOne
-    @JoinColumn(name ="idUsuario", insertable = true,
-                 updatable = true, referencedColumnName = "idUsuario")
-    private Usuario usuario;
+    @JoinColumn(name ="idPersona", insertable = true,
+                 updatable = true, referencedColumnName = "idPersona")
+    private Persona persona;
 }
 

@@ -44,9 +44,9 @@ public class Proyecto {
     @Size(max = 40)
     private String tecnologia;
     
-    @ManyToOne
-    @JoinColumn(name ="idUsuario", insertable = true,
-                 updatable = true, referencedColumnName = "idUsuario")
-    private Usuario usuario;
+     @ManyToOne
+    @JoinColumn(name ="idPersona", insertable = true,
+                 updatable = true, referencedColumnName = "idPersona")
+    private Persona persona;
 }
 

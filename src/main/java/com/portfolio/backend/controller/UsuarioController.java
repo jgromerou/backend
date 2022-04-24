@@ -74,7 +74,7 @@ public class UsuarioController {
     return ResponseEntity.ok(new JwtResponse(jwt, 
                          userDetails.getIdUsuario(), 
                          userDetails.getUsername(), 
-                         userDetails.getEmail(), 
+                          
                          roles));
   }
 
@@ -84,19 +84,10 @@ public class UsuarioController {
       return ResponseEntity.badRequest().body(new MessageResponse("Error: Este nombre de usuario ya está en uso."));
     }
 
-    if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-      return ResponseEntity.badRequest().body(new MessageResponse("Error: Este email ya está en uso."));
-    }
-
     // Crear nueva cuenta de usuario
-    Usuario user = new Usuario(signUpRequest.getUsername(),
-                         signUpRequest.getEmail(),
-                         encoder.encode(signUpRequest.getPassword()),
-                         signUpRequest.getNombres(),signUpRequest.getApellidos(),
-                           signUpRequest.getTelefono(),signUpRequest.getDomicilio(),
-                            signUpRequest.getNacionalidad(),
-                            signUpRequest.getFotoperfil());
-
+    Usuario user = new Usuario(signUpRequest.getUsername(),        
+                         encoder.encode(signUpRequest.getPassword()));
+                         
     Set<String> strRoles = signUpRequest.getRol();
     Set<Rol> roles = new HashSet<>();
 

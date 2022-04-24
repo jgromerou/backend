@@ -43,7 +43,7 @@ public class Habilidad {
     private int porcentaje_habilidad;
     
     @ManyToOne
-    @JoinColumn(name ="idUsuario", insertable = true,
-                 updatable = true, referencedColumnName = "idUsuario")
-    private Usuario usuario;
+    @JoinColumn(name ="idPersona", insertable = true,
+                 updatable = true, referencedColumnName = "idPersona")
+    private Persona persona;
 }

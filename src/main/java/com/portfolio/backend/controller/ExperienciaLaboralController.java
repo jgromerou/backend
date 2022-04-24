@@ -81,7 +81,7 @@ public class ExperienciaLaboralController {
         experienciaLaboral.setFechaInicio(exp.getFechaInicio());
         experienciaLaboral.setFechaFin(exp.getFechaFin());
         experienciaLaboral.setDescripcionTareas(exp.getDescripcionTareas());
-        experienciaLaboral.setUsuario(exp.getUsuario());
+        experienciaLaboral.setPersona(exp.getPersona());
         
         interExperienciaLaboral.saveExperienciaLaboral(experienciaLaboral);
         

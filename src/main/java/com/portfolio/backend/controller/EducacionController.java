@@ -76,7 +76,7 @@ public class EducacionController {
         educacion.setFechaInicio(edu.getFechaInicio());
         educacion.setFechaFin(edu.getFechaFin());
         educacion.setPorcentaje_carrera(edu.getPorcentaje_carrera());
-               
+        educacion.setPersona(edu.getPersona());       
         interEducacion.saveEducacion(educacion);
         
         //retorna la educación con sus nuevas modificaciones.

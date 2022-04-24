@@ -74,8 +74,7 @@ public class ProyectoController {
         //setter
         proyecto.setProyecto(proy.getProyecto());
         proyecto.setTecnologia(proy.getTecnologia());
-        proyecto.setUsuario(proy.getUsuario());
-        
+        proyecto.setPersona(proy.getPersona());
         interProyecto.saveProyecto(proyecto);
         
         //retorna el nuevo proyecto

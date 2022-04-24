@@ -77,7 +77,7 @@ public class HabilidadController {
         //setter
         habilidad.setHabilidad(hab.getHabilidad());
         habilidad.setPorcentaje_habilidad(hab.getPorcentaje_habilidad());
-        habilidad.setUsuario(hab.getUsuario());
+        habilidad.setPersona(hab.getPersona());
         
         interHabilidad.saveHabilidad(habilidad);
         
