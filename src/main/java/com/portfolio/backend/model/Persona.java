@@ -46,7 +46,7 @@ public class Persona {
   private String email;
   
   @NotNull
-  @JsonFormat(pattern="yyyy-MM-dd")
+  @JsonFormat(pattern="dd-MM-yyyy")
     private Date fechanacimiento;
   
   @NotBlank
@@ -69,6 +69,11 @@ public class Persona {
   @NotNull
   private String estadocivil;
   
+  @NotBlank
+  @Size(max = 255)
+  @NotNull
+  private String acercade;
+  
   @Size(max = 100)
   private String fotoPerfil;
   
@@ -82,7 +87,7 @@ public class Persona {
 
   public Persona( String nombres,String apellidos, String email,
            Date fechanacimiento, String telefono, String domicilio, String nacionalidad,
-          String estadocivil, String fotoPerfil) {
+          String estadocivil, String acercade, String fotoPerfil) {
    
     
     this.nombres = nombres;
@@ -93,6 +98,7 @@ public class Persona {
     this.domicilio = domicilio;
     this.nacionalidad = nacionalidad;
     this.estadocivil = estadocivil;
+    this.acercade = acercade;
     this.fotoPerfil = fotoPerfil;
   }
 
@@ -168,6 +174,14 @@ public class Persona {
   
   public void setEstadocivil(String estadocivil) {
     this.estadocivil = estadocivil;
+  }
+  
+  public String getAcercade() {
+    return acercade;
+  }
+  
+  public void setAcercade(String acercade) {
+    this.acercade = acercade;
   }
   
   public String getFotoPerfil() {
