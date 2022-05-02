@@ -38,7 +38,7 @@ public class FilesController {
   @Autowired
   FilesStorageService storageService;
   
-  @PreAuthorize("hasRole('ADMIN')")
+  /*@PreAuthorize("hasRole('ADMIN')")*/
   @PostMapping("/upload")
   public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
     String message = "";
@@ -61,7 +61,7 @@ public class FilesController {
     }).collect(Collectors.toList());
     return ResponseEntity.status(HttpStatus.OK).body(fileInfos);
   }
-  @GetMapping("/filesget/{filename:.+}")
+  @GetMapping("/filesget/uploads/{filename:.+}")
   @ResponseBody
   public ResponseEntity<Resource> getFile(@PathVariable String filename) throws IOException {
     /*Resource file = storageService.load(filename);
