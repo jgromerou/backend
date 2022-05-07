@@ -17,8 +17,8 @@ public class PersonaService implements IPersonaService{
     
     @Override
     public List<Persona> getPersona() {
-        List<Persona> listaProyectos = personaRepository.findAll();
-        return listaProyectos;
+        List<Persona> listaPersonas = personaRepository.findAll();
+        return listaPersonas;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class PersonaService implements IPersonaService{
 
     @Override
     public List<Persona> getPersonaByNombre(String persona) {
-         List<Persona> listaPersona = personaRepository.getPersona();
+         List<Persona> listaPersona = personaRepository.getPersonaByNombre(persona);
         return listaPersona;
     }
    

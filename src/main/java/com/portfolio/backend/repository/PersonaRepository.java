@@ -19,6 +19,6 @@ public interface PersonaRepository extends JpaRepository<Persona, Long>{
     @Query(value= "SELECT * FROM  personas", nativeQuery = true)
     List<Persona> getPersona();
     
-    @Query(value= "SELECT * FROM persona where nombres like %?1%", nativeQuery = true)
+    @Query(value= "SELECT * FROM personas where nombres like %?1%", nativeQuery = true)
     List<Persona> getPersonaByNombre(String persona);
 }

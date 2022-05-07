@@ -73,6 +73,13 @@ public class PersonaController {
         persona.setNombres(pers.getNombres());
         persona.setApellidos(pers.getApellidos());
         persona.setEmail(pers.getEmail());
+        persona.setFechanacimiento(pers.getFechanacimiento());
+        persona.setTelefono(pers.getTelefono());
+        persona.setDomicilio(pers.getDomicilio());
+        persona.setNacionalidad(pers.getNacionalidad());
+        persona.setEstadocivil(pers.getEstadocivil());
+        persona.setAcercade(pers.getAcercade());
+        persona.setFotoPerfil(pers.getFotoPerfil());
         interPersona.savePersona(persona);
         
         //retorna el nuevo persona
