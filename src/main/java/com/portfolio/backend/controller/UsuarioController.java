@@ -71,8 +71,10 @@ public class UsuarioController {
     List<String> roles = userDetails.getAuthorities().stream()
         .map(item -> item.getAuthority())
         .collect(Collectors.toList());
+      boolean activa=false;
 
-    return ResponseEntity.ok(new JwtResponse(jwt, 
+    return ResponseEntity.ok(new JwtResponse(jwt,
+                            activa=true,
                          userDetails.getIdUsuario(), 
                          userDetails.getUsername(),            
                          roles));

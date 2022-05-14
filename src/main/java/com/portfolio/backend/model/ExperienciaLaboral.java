@@ -51,7 +51,7 @@ public class ExperienciaLaboral {
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
     private String fechaInicio;
     
-    @NotBlank
+    
     @Size(max = 40)
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
     private String fechaFin;

@@ -4,13 +4,15 @@ import java.util.List;
 
 public class JwtResponse {
   private String token;
+  private boolean activa;
   private String type = "Bearer";
   private Long id;
   private String username;
   private List<String> roles;
 
-  public JwtResponse(String accessToken, Long id, String username, List<String> roles) {
+  public JwtResponse(String accessToken, boolean activa, Long id, String username, List<String> roles) {
     this.token = accessToken;
+    this.activa = activa;
     this.id = id;
     this.username = username;
     this.roles = roles;
@@ -51,4 +53,13 @@ public class JwtResponse {
   public List<String> getRoles() {
     return roles;
   }
+  
+  public boolean getActiva() {
+    return activa;
+  }
+
+  public void setActiva(boolean activa) {
+    this.activa = activa;
+  }
+  
 }

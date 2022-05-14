@@ -24,6 +24,9 @@ import com.portfolio.backend.model.ResponseMessage;
 import com.portfolio.backend.service.FilesStorageService;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -43,8 +46,10 @@ public class FilesController {
   public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
     String message = "";
     try {
+        String currentDate = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
       storageService.save(file);
-      message = "Se subió el archivo con éxito.";
+      //message = "Se subió el archivo con éxito" + file.getOriginalFilename();
+      message = FilenameUtils.getBaseName(file.getOriginalFilename()).concat(currentDate) + "." + FilenameUtils.getExtension(file.getOriginalFilename());
       return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
     } catch (Exception e) {
       message = "Could not upload the file: " + file.getOriginalFilename() + "!";

@@ -35,7 +35,7 @@ public class ExperienciaLaboralController {
     
     @GetMapping ("/traer")
     /*@PreAuthorize("hasRole('ADMIN')")*/
-    public List<ExperienciaLaboral> getHabibilidades(){
+    public List<ExperienciaLaboral> getExperienciaLaborals(){
         return interExperienciaLaboral.getExperienciasLaborales();
     }
     

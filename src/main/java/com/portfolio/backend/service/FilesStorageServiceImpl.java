@@ -27,7 +27,7 @@ public class FilesStorageServiceImpl implements FilesStorageService {
   @Override
   public void save(MultipartFile file) {
     try {
-      String currentDate = new SimpleDateFormat("yyyyMMddHHmm").format(new Date());
+      String currentDate = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
       Files.copy(file.getInputStream(), this.root.resolve( file.getOriginalFilename().replace(file.getOriginalFilename(), FilenameUtils.getBaseName(file.getOriginalFilename()).concat(currentDate) + "." + FilenameUtils.getExtension(file.getOriginalFilename()))));
     } catch (Exception e) {
       throw new RuntimeException("Could not store the file. Error: " + e.getMessage());

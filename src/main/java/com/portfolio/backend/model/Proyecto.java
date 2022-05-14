@@ -44,6 +44,10 @@ public class Proyecto {
     @Size(max = 40)
     private String tecnologia;
     
+ 
+    @Size(max = 120)
+    private String linkrepositorio;
+    
      @ManyToOne
     @JoinColumn(name ="idPersona", insertable = true,
                  updatable = true, referencedColumnName = "idPersona")

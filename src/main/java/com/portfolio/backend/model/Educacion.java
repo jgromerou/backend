@@ -50,7 +50,6 @@ public class Educacion {
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
     private String fechaInicio;
     
-    @NotBlank
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
     private String fechaFin;
     

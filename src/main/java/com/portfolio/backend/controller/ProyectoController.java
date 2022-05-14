@@ -77,6 +77,7 @@ public class ProyectoController {
         //setter
         proyecto.setProyecto(proy.getProyecto());
         proyecto.setTecnologia(proy.getTecnologia());
+        proyecto.setLinkrepositorio(proy.getLinkrepositorio());
         proyecto.setPersona(proy.getPersona());
         interProyecto.saveProyecto(proyecto);
         

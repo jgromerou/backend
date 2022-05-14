@@ -42,5 +42,11 @@ public class PersonaService implements IPersonaService{
          List<Persona> listaPersona = personaRepository.getPersonaByNombre(persona);
         return listaPersona;
     }
+
+    @Override
+    public void editFotoperfilByPersona(Long id, String foto) {
+       personaRepository.editFotoperfilByPersona(id,foto);
+
+    }
    
 }

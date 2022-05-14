@@ -8,6 +8,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -84,6 +85,34 @@ public class PersonaController {
         
         //retorna el nuevo persona
         return persona;
+        
+    }
+    
+    @PutMapping ("/editarfotoperfil/{id}/{foto}")
+    public String editFotoperfil (@PathVariable Long id,@PathVariable String foto){
+        //Persona user = interPersona.getPersonaById(id);
+        
+        
+
+        //edito la foto de perfil por id de persona
+       interPersona.editFotoperfilByPersona(id,foto);
+        
+       return "ok";
+        //setter
+//        persona.setNombres(pers.getNombres());
+//        persona.setApellidos(pers.getApellidos());
+//        persona.setEmail(pers.getEmail());
+//        persona.setFechanacimiento(pers.getFechanacimiento());
+//        persona.setTelefono(pers.getTelefono());
+//        persona.setDomicilio(pers.getDomicilio());
+//        persona.setNacionalidad(pers.getNacionalidad());
+//        persona.setEstadocivil(pers.getEstadocivil());
+//        persona.setAcercade(pers.getAcercade());
+//        persona.setFotoPerfil(pers.getFotoPerfil());
+//        interPersona.savePersona(persona);
+        
+        //retorna el nuevo persona
+        //return "se cambió correctamente el campo foto de perfil";
         
     }
 }
