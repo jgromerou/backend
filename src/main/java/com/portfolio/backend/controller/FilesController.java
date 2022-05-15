@@ -66,7 +66,7 @@ public class FilesController {
     }).collect(Collectors.toList());
     return ResponseEntity.status(HttpStatus.OK).body(fileInfos);
   }
-  @GetMapping("/filesget/uploads/{filename:.+}")
+  @GetMapping("/filesget/{filename:.+}")
   @ResponseBody
   public ResponseEntity<Resource> getFile(@PathVariable String filename) throws IOException {
     /*Resource file = storageService.load(filename);
