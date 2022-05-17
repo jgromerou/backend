@@ -73,7 +73,7 @@ public class FilesController {
     return ResponseEntity.ok()
         .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"").body(file);*/
     Resource file = storageService.load(filename);
-    return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(file);
+    return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"").contentType(MediaType.IMAGE_JPEG).body(file);
   }
   @GetMapping("/files/{filename:.+}")
   @ResponseBody
