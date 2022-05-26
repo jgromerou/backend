@@ -39,7 +39,7 @@ DELETE | /persona/borrar/:id | Elimina persona "Admin" |
 GET    | /persona/buscar/:id | Busca una persona por id | 
 GET     | /persona/buscar/:nombre | Buscar una persona por su nombre | 
 
-# Métodos de Persona
+# Métodos de Habilidad
 METODO | #Url de Habilidad | #Acción | #JSON de envio 
 --- | --- | --- | --- 
 POST   | /habilidad/crear | Agregar nueva habilidad "admin" |  {"habilidad":"desarrollador Full Stack","porcentaje_habilidad":"80","persona":"1"}
