@@ -1,0 +1,1310 @@
+{
+	"info": {
+		"_postman_id": "c5d6f411-2b5c-48aa-815c-ad1c29db472d",
+		"name": "backend argentina programa (LOCAL)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MTg5MzAzOSwiZXhwIjoxNjUxOTc5NDM5fQ.9FEi0ifnLfueippxj2mCkkZJ-8pHsEJlT8z3bN_TN5qk9YIzC8j5U74CaFSg0v-tDVsIukUxNs7Et57zUSv3qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"usuario\",\n    \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrarusuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"usuario\",\n    \"password\":\"123456\",\n    \"rol\":[\"USER\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/registrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear persona",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MTg5MzY2OSwiZXhwIjoxNjUxOTgwMDY5fQ.lDwYuHspREHo1RIoOhh5xyIMU8JSFLVhKpHz0yY_KIdwbl3sY-XLDPVd6C9w7CuDXOrYMbmFe_d0i1uwhmWDwg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombres\":\"gerardo\",\n    \"apellidos\":\"romero uro\",\n    \"email\":\"jgromerouro@gmail.com\",\n    \"fechanacimiento\":\"29-11-1990\",\n    \"telefono\":\"111111\",\n    \"domicilio\":\"tucumán\",\n    \"nacionalidad\":\"argentina\",\n    \"estadocivil\":\"soltero\",\n    \"acercade\":\"Me interesa la programación\",\n    \"foto_perfil\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/persona/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persona",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "traer persona",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/persona/traer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persona",
+						"traer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar persona",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MTg5MzY2OSwiZXhwIjoxNjUxOTgwMDY5fQ.lDwYuHspREHo1RIoOhh5xyIMU8JSFLVhKpHz0yY_KIdwbl3sY-XLDPVd6C9w7CuDXOrYMbmFe_d0i1uwhmWDwg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id_persona\":\"2\",\n    \"nombres\":\"fabian\",\n    \"apellidos\":\"perez\",\n    \"email\":\"fabip@gmail.com\",\n    \"fechanacimiento\":\"23-12-1993\",\n    \"telefono\":\"111111\",\n    \"domicilio\":\"leales\",\n    \"nacionalidad\":\"argentina\",\n    \"estadocivil\":\"soltero\",\n    \"acercade\":\"Me interesa la programación\",\n    \"foto_perfil\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/persona/editar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persona",
+						"editar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "persona/borrar/{id} Eliminar por id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MTg5MzAzOSwiZXhwIjoxNjUxOTc5NDM5fQ.9FEi0ifnLfueippxj2mCkkZJ-8pHsEJlT8z3bN_TN5qk9YIzC8j5U74CaFSg0v-tDVsIukUxNs7Et57zUSv3qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/persona/borrar/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persona",
+						"borrar",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "persona/buscarid/{id} Buscar por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/persona/buscarnombre/fa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persona",
+						"buscarnombre",
+						"fa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "persona/editarfotoperfil/{id} Editar foto de perfil",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/persona/editarfotoperfil/2/prueba55",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persona",
+						"editarfotoperfil",
+						"2",
+						"prueba55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/publico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/test/publico",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"publico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/mod",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtb2RlcmFkb3IzIiwiaWF0IjoxNjQ5MzMwMzU2LCJleHAiOjE2NDk0MTY3NTZ9.dZ3Z7MigDo6_ld3qiM9bB4mTg8ZRTtNABnBHNc3pOYhOOjKbdhAztncVZfVkdlMo18Oy9pPRQ-l4UbqLVI3p2A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/test/mod",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"mod"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY0OTMzMDQxNywiZXhwIjoxNjQ5NDE2ODE3fQ.4o8Q0VACrwMMVrYXTpl6o7TnH0tDfGAdHjVEE39bWIrXY4SbJgKLGIawlmpFTw4FIu97RPII3ycB6pgj4sj01A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/test/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/upload",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gerardo/Descargas/b61411fce1f02a043392c808f577576a202205070033.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"upload"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/files (listado de imagenes)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gerardo/Descargas/pinguino.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"files"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/filesget/uploads/{filesname:'nombre del archivo'} mostrar imagen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gerardo/Descargas/pinguino.png",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/filesget/b61411fce1f02a043392c808f577576a20220507003320220518213436.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"filesget",
+						"b61411fce1f02a043392c808f577576a20220507003320220518213436.jpg"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test/files/{'filesname:'nombre del archivo'} - Descargar imagen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MTg5MzAzOSwiZXhwIjoxNjUxOTc5NDM5fQ.9FEi0ifnLfueippxj2mCkkZJ-8pHsEJlT8z3bN_TN5qk9YIzC8j5U74CaFSg0v-tDVsIukUxNs7Et57zUSv3qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/gerardo/Descargas/pinguino.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/test/filesget/uploads/b61411fce1f02a043392c808f577576a202205070033.jpg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"test",
+						"filesget",
+						"uploads",
+						"b61411fce1f02a043392c808f577576a202205070033.jpg"
+					],
+					"query": [
+						{
+							"key": "file",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/crear",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MTg5MzAzOSwiZXhwIjoxNjUxOTc5NDM5fQ.9FEi0ifnLfueippxj2mCkkZJ-8pHsEJlT8z3bN_TN5qk9YIzC8j5U74CaFSg0v-tDVsIukUxNs7Et57zUSv3qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"habilidad\":\"Desarrollo de base de datos MySQL\",\n    \"porcentaje_habilidad\":\"55\",\n    \"persona\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/habilidad/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"habilidad",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/traer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/habilidad/traer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"habilidad",
+						"traer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/borrar/{id} Eliminar por id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MTg5MzAzOSwiZXhwIjoxNjUxOTc5NDM5fQ.9FEi0ifnLfueippxj2mCkkZJ-8pHsEJlT8z3bN_TN5qk9YIzC8j5U74CaFSg0v-tDVsIukUxNs7Et57zUSv3qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"habilidad\":\"Desarrollo de backend\",\n    \"porcentaje_habilidad\":\"50\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/habilidad/borrar/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"habilidad",
+						"borrar",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/buscarid/{id} Buscar por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/habilidad/buscarid/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"habilidad",
+						"buscarid",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/buscarnombre/{nombre} Buscar por nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/habilidad/buscarnombre/backend",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"habilidad",
+						"buscarnombre",
+						"backend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/editar/{id} Editar una habilidad",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MTg5MzAzOSwiZXhwIjoxNjUxOTc5NDM5fQ.9FEi0ifnLfueippxj2mCkkZJ-8pHsEJlT8z3bN_TN5qk9YIzC8j5U74CaFSg0v-tDVsIukUxNs7Et57zUSv3qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"habilidad\":\"desarrollador de base de datos MySQL\",\n    \"porcentaje_habilidad\":60,\n    \"persona\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/habilidad/editar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"habilidad",
+						"editar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "experiencialaboral/crear",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MjQ4MDMzMywiZXhwIjoxNjUyNTY2NzMzfQ.uy7xUYZESarU7l5vigwWNFKzRQfGq3zBbf96GKDwmJWav_la6yJi0H0Auks2-1oroncnXxuOqbZSH76fIp52LQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"empresa\":\"UNT2\",\n    \"puesto\":\"profesor de Electronica IVi\",\n    \"fechaInicio\":\"20032022\",\n    \"fechaFin\":\"\",\n    \"descripcionTareas\":\"enseñar materiales\",\n    \"persona\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/experiencialaboral/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"experiencialaboral",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "experiencialaboral/traer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/experiencialaboral/traer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"experiencialaboral",
+						"traer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "experiencialaboral/borrar/{id} Eliminar por id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MTg5MzAzOSwiZXhwIjoxNjUxOTc5NDM5fQ.9FEi0ifnLfueippxj2mCkkZJ-8pHsEJlT8z3bN_TN5qk9YIzC8j5U74CaFSg0v-tDVsIukUxNs7Et57zUSv3qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/experiencialaboral/borrar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"experiencialaboral",
+						"borrar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "experiencialaboral/buscarid/{id} Buscar por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/experiencialaboral/buscarid/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"experiencialaboral",
+						"buscarid",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "experiencialaboral/buscarempresa/{empresa} Buscar por nombre empresa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/experiencialaboral/buscarid/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"experiencialaboral",
+						"buscarid",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "habilidad/editar/{id} Editar una experiencia laboral",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"empresa\":\"prueba\",\n    \"puesto\":\"prueba de puesto\",\n    \"fechaInicio\":\"20032022\",\n    \"fechaFin\":\"21092022\",\n    \"descripcionTareas\":\"enseñar materiales\",\n    \"usuario\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/experiencialaboral/editar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"experiencialaboral",
+						"editar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proyecto/crear",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MjQ5ODUxOSwiZXhwIjoxNjUyNTg0OTE5fQ.xTg98FodNpQR9KqVXMwowGY_OoPXMWsoyMPGnEIWQJ3ekKyjJwqLMOUrc1cVAtk8BMUU3vo03PiPHp_QWDUpIg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proyecto\":\"lista de alumnos 3\",\n    \"tecnologia\":\"Angular JS, Node Js, Mysql\",\n    \"linkrepositorio\":\"prueba\",\n    \"persona\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proyecto/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proyecto",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proyecto/traer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proyecto/traer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proyecto",
+						"traer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proyecto/borrar/{id} Eliminar por id proyecto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MTg5MzAzOSwiZXhwIjoxNjUxOTc5NDM5fQ.9FEi0ifnLfueippxj2mCkkZJ-8pHsEJlT8z3bN_TN5qk9YIzC8j5U74CaFSg0v-tDVsIukUxNs7Et57zUSv3qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proyecto/borrar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proyecto",
+						"borrar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proyecto/buscarid/{id} Buscar por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proyecto/buscarid/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proyecto",
+						"buscarid",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proyecto/buscarnombre/{nombre} Buscar por nombre proyecto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/proyecto/buscarnombre/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proyecto",
+						"buscarnombre",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "proyecto/editar/{id} Editar un proyecto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proyecto\":\"CRUD en Base de dato MySQL\",\n    \"tecnologia\":\"MySQL\",\n    \"usuario\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/proyecto/editar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"proyecto",
+						"editar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educacion/crear",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MTg5MzAzOSwiZXhwIjoxNjUxOTc5NDM5fQ.9FEi0ifnLfueippxj2mCkkZJ-8pHsEJlT8z3bN_TN5qk9YIzC8j5U74CaFSg0v-tDVsIukUxNs7Et57zUSv3qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"institucion\":\"Tulio2\",\n    \"titulo\":\"Bachiller2\",\n    \"fechaInicio\":\"03032002\",\n    \"fechaFin\":\"10102008\",\n    \"porcentaje_carrera\":100,\n    \"persona\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/educacion/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"educacion",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educacion/traer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/educacion/traer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"educacion",
+						"traer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educacion/borrar/{id} Eliminar por id educacion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MTg5MzAzOSwiZXhwIjoxNjUxOTc5NDM5fQ.9FEi0ifnLfueippxj2mCkkZJ-8pHsEJlT8z3bN_TN5qk9YIzC8j5U74CaFSg0v-tDVsIukUxNs7Et57zUSv3qQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/educacion/borrar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"educacion",
+						"borrar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educacion/buscarid/{id} Buscar por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/educacion/buscarid/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"educacion",
+						"buscarid",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educacion/buscarinstitucion/{institucion} Buscar por nombre institucion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/educacion/buscarinstitucion/tulio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"educacion",
+						"buscarinstitucion",
+						"tulio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "educacion/editar/{id} Editar una educación",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY1MzUxODIxNiwiZXhwIjoxNjUzNjA0NjE2fQ.BkvoCgWUEkA3v8OWgPvuAIfAXJGt8ycrEqAq00v4Ix3wEwXx_EHFmUG67snUAhlUCRhhplNasiOT4vaXK9sDLA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"institucion\":\"Belgrano\",\n    \"titulo\":\"Perito Mercantil\",\n    \"fechaInicio\":\"03032002\",\n    \"fechaFin\":\"10102008\",\n    \"porcentaje_carrera\":75,\n    \"linkimagen\":\"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCLiL8X_z48zkZlPJcXrtCQA&psig=AOvVaw1HmIIUNz6jTXSKTyMTRhFd&ust=1653604596223000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJDlm6fb-_cCFQAAAAAdAAAAABAD\",\n    \"persona\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/educacion/editar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"educacion",
+						"editar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
