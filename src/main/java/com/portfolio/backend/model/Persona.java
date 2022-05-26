@@ -1,8 +1,6 @@
 package com.portfolio.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import java.util.Date;
-import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,11 +11,15 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
  * @author gerardo romero uro
  */
+@Getter
+@Setter
 @Entity
 @Table(name = "personas",
        uniqueConstraints = {
@@ -45,9 +47,9 @@ public class Persona {
   @NotNull
   private String email;
   
-  @NotNull
-  @JsonFormat(pattern="dd-MM-yyyy")
-    private Date fechanacimiento;
+
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
+    private String fechanacimiento;
   
   @NotBlank
   @Size(max = 15)
@@ -86,7 +88,7 @@ public class Persona {
   
 
   public Persona( String nombres,String apellidos, String email,
-           Date fechanacimiento, String telefono, String domicilio, String nacionalidad,
+           String fechanacimiento, String telefono, String domicilio, String nacionalidad,
           String estadocivil, String acercade, String fotoPerfil) {
    
     
@@ -102,93 +104,93 @@ public class Persona {
     this.fotoPerfil = fotoPerfil;
   }
 
-  public Long getIdPersona() {
-    return idPersona;
-  }
-
-  public void setIdPersona(Long idPersona) {
-    this.idPersona = idPersona;
-  }
-
- 
-  
-  public String getNombres() {
-    return nombres;
-  }
-
-  public void setNombres(String nombres) {
-    this.nombres = nombres;
-  }
-  
-  public String getApellidos() {
-    return apellidos;
-  }
-
-  public void setApellidos(String apellidos) {
-    this.apellidos = apellidos;
-  }
-  
-   public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-  
-   public Date getFechanacimiento() {
-    return fechanacimiento;
-  }
-
-  public void setFechanacimiento(Date fechanacimiento) {
-    this.fechanacimiento = fechanacimiento;
-  }
-  
-  public String getTelefono() {
-    return telefono;
-  }
-  
-  public void setTelefono(String telefono) {
-    this.telefono = telefono;
-  }
-
-  public String getDomicilio() {
-    return domicilio;
-  }
-  
-  public void setDomicilio(String domicilio) {
-    this.domicilio = domicilio;
-  }
-  
-  public String getNacionalidad() {
-    return nacionalidad;
-  }
-  
-  public void setNacionalidad(String nacionalidad) {
-    this.nacionalidad = nacionalidad;
-  }
-  
-   public String getEstadocivil() {
-    return estadocivil;
-  }
-  
-  public void setEstadocivil(String estadocivil) {
-    this.estadocivil = estadocivil;
-  }
-  
-  public String getAcercade() {
-    return acercade;
-  }
-  
-  public void setAcercade(String acercade) {
-    this.acercade = acercade;
-  }
-  
-  public String getFotoPerfil() {
-    return fotoPerfil;
-  }
-  
-  public void setFotoPerfil(String fotoPerfil) {
-    this.fotoPerfil = fotoPerfil;
-  }
+//  public Long getIdPersona() {
+//    return idPersona;
+//  }
+//
+//  public void setIdPersona(Long idPersona) {
+//    this.idPersona = idPersona;
+//  }
+//
+// 
+//  
+//  public String getNombres() {
+//    return nombres;
+//  }
+//
+//  public void setNombres(String nombres) {
+//    this.nombres = nombres;
+//  }
+//  
+//  public String getApellidos() {
+//    return apellidos;
+//  }
+//
+//  public void setApellidos(String apellidos) {
+//    this.apellidos = apellidos;
+//  }
+//  
+//   public String getEmail() {
+//    return email;
+//  }
+//
+//  public void setEmail(String email) {
+//    this.email = email;
+//  }
+//  
+//   public String getFechanacimiento() {
+//    return fechanacimiento;
+//  }
+//
+//  public void setFechanacimiento(String fechanacimiento) {
+//    this.fechanacimiento = fechanacimiento;
+//  }
+//  
+//  public String getTelefono() {
+//    return telefono;
+//  }
+//  
+//  public void setTelefono(String telefono) {
+//    this.telefono = telefono;
+//  }
+//
+//  public String getDomicilio() {
+//    return domicilio;
+//  }
+//  
+//  public void setDomicilio(String domicilio) {
+//    this.domicilio = domicilio;
+//  }
+//  
+//  public String getNacionalidad() {
+//    return nacionalidad;
+//  }
+//  
+//  public void setNacionalidad(String nacionalidad) {
+//    this.nacionalidad = nacionalidad;
+//  }
+//  
+//   public String getEstadocivil() {
+//    return estadocivil;
+//  }
+//  
+//  public void setEstadocivil(String estadocivil) {
+//    this.estadocivil = estadocivil;
+//  }
+//  
+//  public String getAcercade() {
+//    return acercade;
+//  }
+//  
+//  public void setAcercade(String acercade) {
+//    this.acercade = acercade;
+//  }
+//  
+//  public String getFotoPerfil() {
+//    return fotoPerfil;
+//  }
+//  
+//  public void setFotoPerfil(String fotoPerfil) {
+//    this.fotoPerfil = fotoPerfil;
+//  }
 }

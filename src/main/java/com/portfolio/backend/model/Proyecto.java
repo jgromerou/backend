@@ -45,7 +45,7 @@ public class Proyecto {
     private String tecnologia;
     
  
-    @Size(max = 120)
+    @Size(max = 254)
     private String linkrepositorio;
     
      @ManyToOne

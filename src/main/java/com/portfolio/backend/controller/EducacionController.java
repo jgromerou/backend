@@ -79,6 +79,7 @@ public class EducacionController {
         educacion.setFechaInicio(edu.getFechaInicio());
         educacion.setFechaFin(edu.getFechaFin());
         educacion.setPorcentaje_carrera(edu.getPorcentaje_carrera());
+        educacion.setLinkimagen(edu.getLinkimagen());
         educacion.setPersona(edu.getPersona());       
         interEducacion.saveEducacion(educacion);
         

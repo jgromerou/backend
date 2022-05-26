@@ -55,6 +55,10 @@ public class Educacion {
     
     private int porcentaje_carrera;
     
+    @NotNull
+    @Size(max = 254)
+    private String linkimagen;
+    
     @ManyToOne
     @JoinColumn(name ="idPersona", insertable = true,
                  updatable = true, referencedColumnName = "idPersona")
