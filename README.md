@@ -8,7 +8,7 @@ URL -> [https://www.backendargentinaprograma.heroku.com/api/](https://backendarg
 Uso de la librería Swagger
 URL -> https://backendargentinaprograma.herokuapp.com/swagger-ui/index.html
 
-API-DOCS
+Api-Docs
 URL -> https://backendargentinaprograma.herokuapp.com/v2/api-docs
 
 # Métodos de Usuario
